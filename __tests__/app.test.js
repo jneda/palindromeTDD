@@ -1,10 +1,13 @@
 const app = require("../app.js");
 
-describe("test de jest", () => {
-  it("devrait retourner une phrase", () => {
-    expect(app.sentence.length).toBeGreaterThan(0);
+describe("palindrome", () => {
+  it("devrait être un palindrome", () => {
+    expect(app.estPalindrome("kayak")).toEqual(true);
   });
-  it("devrait avoir une longueur de 11 caractères", () => {
-    expect(app.sentence.length).toEqual(11);
+  it("ne devrait pas être un palindrome", () => {
+    expect(app.estPalindrome("toto")).toEqual(false);
+  });
+  it("devrait être un palindrome", () => {
+    expect(app.estPalindrome("karine alla en irak")).toEqual(true);
   });
 });
